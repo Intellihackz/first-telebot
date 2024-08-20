@@ -6,9 +6,10 @@ import chalk from 'chalk';
 import path from 'path';
 import { Connection } from '@solana/web3.js';
 import { MAINNET_PROGRAM_ID } from '@raydium-io/raydium-sdk';
-
+import dotenv from 'dotenv';
+dotenv.config();
 // Replace the value below with the Telegram token you receive from @BotFather
-const token = '6718027163:AAHJPeMqs7Rr9YV8hGG-PzwbZ_XMKvpuk_0';
+const token = process.env.TOKEN;
 
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, { polling: true });
